@@ -79,56 +79,19 @@ main :: proc() {
 	}
 
 	decode_reg :: proc(reg: byte, w:byte) -> string {
-		if reg == 0 {
-			if w == 1 {
-				return "ax"
-			} else {
-				return "al"
-			}
-		} else if reg == 1 {
-			if w == 1 {
-				return "cx"
-			} else {
-				return "cl"
-			}
-		} else if reg == 2 {
-			if w == 1 {
-				return "dx"
-			} else {
-				return "dl"
-			}
-		} else if reg == 3 {
-			if w == 1 {
-				return "bx"
-			} else {
-				return "bl"
-			}
-		} else if reg == 4 {
-			if w == 1 {
-				return "sp"
-			} else {
-				return "ah"
-			}
-		} else if reg == 5 {
-			if w == 1 {
-				return "bp"
-			} else {
-				return "ch"
-			}
-		} else if reg == 6 {
-			if w == 1 {
-				return "si"
-			} else {
-				return "dh"
-			}
-		} else if reg == 7 {
-			if w == 1 {
-				return "di"
-			} else {
-				return "bh"
-			}
+
+		table := [8][2]string{
+			{"al","ax"},
+			{"cl","cx"},
+			{"dl","dx"},
+			{"bl","bx"},
+			{"ah","sp"},
+			{"ch","bp"},
+			{"dh","si"},
+			{"bh","di"},
 		}
-		return "error"
+		return table[reg][w]
+
 	}
 }
 
