@@ -18,6 +18,7 @@ main :: proc() {
 		fmt.println("could not read file")
 	}
 
+	fmt.println("bits 16")
 
 	c := 0 //consumed bytes
 	for c < len(bytes){
