@@ -18,9 +18,6 @@ main :: proc() {
 		fmt.println("could not read file")
 	}
 
-	// for b in bytes {
-	// 	fmt.printfln("%#b",b)
-	// }
 
 	c := 0 //consumed bytes
 	for c < len(bytes){
@@ -40,14 +37,6 @@ main :: proc() {
 			r_m := bytes[c] & 0b00000111
 			
 			
-			// fmt.printfln("d:     %#b", d)
-			// fmt.printfln("w:     %#b", w)
-			
-			// fmt.printfln("bytes: %#b", bytes[c])
-			// fmt.printfln("mod:   %#b", mod)
-			// fmt.printfln("reg:   %#b", reg)
-			// fmt.printfln("r_m:   %#b", r_m)
-
 			reg_code := decode_reg(reg, w)
 			r_m_code : string
 			if mod == 0b11 {
